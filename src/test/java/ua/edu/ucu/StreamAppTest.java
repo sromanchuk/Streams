@@ -87,8 +87,8 @@ public class StreamAppTest {
     public void testStreamFilter() {
         System.out.println("filter");
         IntStream expResult = AsIntStream.of(2, 3);
-        IntStream output = AsIntStream.of(-1, 0, 1, 2, 3);
-        IntStream result = output.filter(x -> x > 1);
+        IntStream pr_res = AsIntStream.of(-1, 0, 1, 2, 3);
+        IntStream result = pr_res.filter(x -> x > 1);
         assertArrayEquals(expResult.toArray(), result.toArray());
     }
 
@@ -96,8 +96,8 @@ public class StreamAppTest {
     public void testStreamMap() {
         System.out.println("map");
         IntStream expResult = AsIntStream.of(2, 4, 6);
-        IntStream output = AsIntStream.of(1, 2, 3);
-        IntStream result = output.map(x -> x * 2);
+        IntStream pr_res = AsIntStream.of(1, 2, 3);
+        IntStream result = pr_res.map(x -> x * 2);
         assertArrayEquals(expResult.toArray(), result.toArray());
     }
 
@@ -105,8 +105,8 @@ public class StreamAppTest {
     public void testStreamFlatMap() {
         System.out.println("flatMap");
         IntStream expResult = AsIntStream.of(-1, 1, 3, 2, 4, 6, 7, 9, 11);
-        IntStream output = AsIntStream.of(1, 4, 9);
-        IntStream result = output.flatMap(x -> AsIntStream.of(x - 2, x, x + 2));
+        IntStream pr_res = AsIntStream.of(1, 4, 9);
+        IntStream result = pr_res.flatMap(x -> AsIntStream.of(x - 2, x, x + 2));
         assertArrayEquals(expResult.toArray(), result.toArray());
     }
 }
