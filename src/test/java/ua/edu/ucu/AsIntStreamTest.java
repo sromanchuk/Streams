@@ -85,4 +85,13 @@ public class AsIntStreamTest {
         IntStream result = pr_res.flatMap(x -> AsIntStream.of(x - 3, x));
         assertArrayEquals(expResult.toArray(), result.toArray());
     }
+
+    @Test
+    public void testStreamReduce() {
+        System.out.println("reduce");
+        int expResult = 31;
+        IntStream intStream = AsIntStream.of(1, 4, 6, 9, 11);
+        int result = intStream.reduce(0, (sum, x) -> sum += x);
+        assertEquals(expResult, result);
+    }
 }
