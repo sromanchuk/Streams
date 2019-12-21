@@ -3,7 +3,6 @@ package ua.edu.ucu.stream;
 import ua.edu.ucu.function.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.lang.*;
 
 
 public class AsIntStream implements IntStream {
